@@ -10,61 +10,29 @@
 >
   <table mat-table [dataSource]="posts" class="mat-elevation-z8">
     <ng-container matColumnDef="img">
-      <th
-        mat-header-cell
-        *matHeaderCellDef
-        class="text-lg font-medium text-gray-900"
-      >
-        <span class="w-full flex justify-start">Image</span>
-      </th>
-      <td mat-cell *matCellDef="let element" class="w-1/5">
+      <th mat-header-cell *matHeaderCellDef class="w-1/12 text-center" >Image</th>
+      <td mat-cell *matCellDef="let element"  class="w-1/12 text-center">
         <img
-          class="rounded-full my-2"
-          height="50"
-          width="50"
+        class="rounded-full w-20 text-center"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqrrxsxZSpsfebkw8VLXe6R5j7mryT6PK7Pg&usqp=CAU"
           [alt]="element?.userName"
         />
       </td>
     </ng-container>
 
-    <ng-container matColumnDef="userName">
-      <th
-        mat-header-cell
-        *matHeaderCellDef
-        class="w-1/5 text-lg font-medium text-gray-900"
-      >
-        <span class="w-full flex justify-start"> User Name</span>
-      </th>
-      <td mat-cell *matCellDef="let element" class="w-1/5">
-        {{ element?.userName }}
-      </td>
+    <ng-container matColumnDef="userName" >
+      <th mat-header-cell *matHeaderCellDef  class="w-2/12 text-center">User Name</th>
+      <td mat-cell *matCellDef="let element" class="w-2/12 text-center">{{ element?.userName }}</td>
     </ng-container>
 
     <ng-container matColumnDef="title">
-      <th
-        mat-header-cell
-        *matHeaderCellDef
-        class="w-1/5 text-lg font-medium text-gray-900"
-      >
-        <span class="w-full flex justify-start">Title</span>
-      </th>
-      <td mat-cell *matCellDef="let element" class="w-1/5">
-        {{ element?.title }}
-      </td>
+      <th mat-header-cell *matHeaderCellDef class="w-3/12 text-center">Title</th>
+      <td mat-cell *matCellDef="let element" class="w-3/12 text-center ">{{ element?.title }}</td>
     </ng-container>
 
-    <ng-container matColumnDef="body">
-      <th
-        mat-header-cell
-        *matHeaderCellDef
-        class="w-2/5 text-lg font-medium text-gray-900"
-      >
-        <span class="w-full flex justify-start">Body</span>
-      </th>
-      <td mat-cell *matCellDef="let element" class="w-1/5">
-        {{ element?.body }}
-      </td>
+    <ng-container matColumnDef="body" >
+      <th mat-header-cell *matHeaderCellDef class="w-6/12 text-center" >Body</th>
+      <td mat-cell *matCellDef="let element" class="w-6/12 text-center ">{{ element?.body }}</td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
