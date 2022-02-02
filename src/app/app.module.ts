@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Route, RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material.module';
+import { PostDialogComponent } from './post-dialog/post-dialog.component';
 
 const routes: Route[] = [
   { path: '', component: UsersTableComponent },
@@ -23,6 +24,7 @@ const routes: Route[] = [
     UsersTableComponent,
     HeaderComponent,
     FooterComponent,
+    PostDialogComponent,
   ],
   imports: [
     BrowserModule,
