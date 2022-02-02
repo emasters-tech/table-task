@@ -1,7 +1,10 @@
-<button mat-raised-button color="warn" (click)="addPost()">Warn</button>
+<div class="flex justify-end mb-6 px-2 mx-20">
+<button mat-raised-button class="mr-auto" color="primary" (click)="addPost()">Create new</button>
 
-<ng-container *ngIf="dataSource">
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+</div>
+
+<div class="mx-20 p-2 rounded overflow-hidden shadow-lg" *ngIf="users$|async as users">
+  <table mat-table [dataSource]="users" class="mat-elevation-z8">
     <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
 
@@ -42,4 +45,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-</ng-container>
+</div>

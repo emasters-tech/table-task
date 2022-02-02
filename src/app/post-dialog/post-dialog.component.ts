@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { MatDialogRef } from '@angular/material/dialog';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-post-dialog',
@@ -6,7 +9,33 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./post-dialog.component.scss'],
 })
 export class PostDialogComponent implements OnInit {
-  public constructor() {}
 
-  public ngOnInit(): void {}
+  constructor(
+    private fb:FormBuilder,
+    public  dialogRef: MatDialogRef<PostDialogComponent>,
+    private userService:UserService
+  ) { }
+
+  public users$=this.userService.users$
+
+  public postForm=this.fb.group({
+    userId:[null,Validators.required],
+    title:['',Validators.required],
+    body:['',Validators.required]
+  })
+
+  public ngOnInit(): void {
+  }
+
+  public closeDialog(): void {
+    this.dialogRef.close();
+  }
+
+  public submitPosttForm():void{
+    this.userService.submitPost(this.postForm.value).subscribe(post=>{
+      this.closeDialog()
+      // Push to list 
+    });
+  }
+
 }

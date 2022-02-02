@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { Route, RouterModule } from '@angular/router';
 import { MaterialModule } from './shared/material.module';
 import { PostDialogComponent } from './post-dialog/post-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const routes: Route[] = [
   { path: '', component: UsersTableComponent },
@@ -34,6 +35,7 @@ const routes: Route[] = [
     AppMaterialModule,
     HttpClientModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
