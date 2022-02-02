@@ -9,9 +9,10 @@
 
 <div
   class="mx-20 p-2 rounded overflow-hidden shadow-lg"
-  *ngIf="postsWithUser$ | async as posts; else loader"
+
 >
-  <table mat-table [dataSource]="posts" class="mat-elevation-z8">
+<ng-container  *ngIf="dataSource ; else loader">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="img">
       <th mat-header-cell *matHeaderCellDef class="w-1/12 text-center" ></th>
       <td mat-cell *matCellDef="let element"  class="w-1/12 text-center">
@@ -41,9 +42,11 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-  showFirstLastButtons
-  aria-label="Select page of periodic elements">
+
+</ng-container>
+<mat-paginator [pageSizeOptions]="[5, 10, 20]"
+showFirstLastButtons
+aria-label="Select page ">
 </mat-paginator>
 </div>
 <ng-template #loader>
