@@ -7,21 +7,31 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppMaterialModule } from './shared/app.material-module';
 import { UsersTableComponent } from './users-table/users-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { Route, RouterModule } from '@angular/router';
+
+const routes: Route[] = [
+  { path: '', component: UsersTableComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    UsersTableComponent
+    UsersTableComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
     AppMaterialModule,
-    HttpClientModule
-
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
