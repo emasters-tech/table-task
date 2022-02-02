@@ -10,13 +10,14 @@ import { UserService } from '../user/user.service';
   styleUrls: ['./users-table.component.scss'],
 })
 export class UsersTableComponent implements OnInit {
-  constructor(private userService: UserService, public dialog: MatDialog) {}
+  constructor(private userService: UserService, public dialog: MatDialog) {
+  }
   
   public users$ = this.userService.users$;
 
   public displayedColumns: string[] = ['img','userName', 'title', 'body'];
 
-  public postsWithUser$ = this.userService.postsWithUser$;
+  public  postsWithAdd$ = this.userService.postsWithAdd$;
 
   ngOnInit(): void {}
 
@@ -26,5 +27,4 @@ export class UsersTableComponent implements OnInit {
     });
   }
 
-  clickedRows = new Set<Post>();
 }

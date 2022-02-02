@@ -31,10 +31,9 @@ export class PostDialogComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  public submitPosttForm():void{
-    this.userService.submitPost(this.postForm.value).subscribe(post=>{
+  public submitPostForm():void{
+    this.userService.submitPost(this.postForm.value).subscribe(_=>{
       this.closeDialog()
-      // Push to list 
     });
   }
 

@@ -6,7 +6,7 @@
 
 <div
   class="mx-20 p-2 rounded overflow-hidden shadow-lg"
-  *ngIf="postsWithUser$ | async as posts; else loader"
+  *ngIf=" postsWithAdd$ | async as posts; else loader"
 >
   <table mat-table [dataSource]="posts" class="mat-elevation-z8">
     <ng-container matColumnDef="img">

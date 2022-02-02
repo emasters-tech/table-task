@@ -1,8 +1,8 @@
 export interface Post {
-  userId:number
+  userId?:number
   userName?:string;
-  id:number;
-  title:string;
-  body:string;
+  id?:number;
+  title?:string;
+  body?:string;
 
 }

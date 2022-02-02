@@ -15,10 +15,10 @@
 
             <mat-form-field appearance="fill" class="w-full my-4">
                 <mat-label >Post Title</mat-label>
-                <input formControlName='title' matInput type="text"   >
+                <input formControlName='title' matInput type="text">
             </mat-form-field>
 
-            <mat-form-field class="example-full-width" appearance="fill" class="w-full ">
+            <mat-form-field class="example-full-width" appearance="fill" class="w-full">
                 <mat-label>Your comment</mat-label>
                 <textarea formControlName='body'  rows="5" matInput placeholder="Ex. It makes me feel..."></textarea>
               </mat-form-field>
@@ -28,6 +28,6 @@
     </div>
     <div mat-dialog-actions>
     <button mat-button (click)="closeDialog()">No Thanks</button>
-    <button mat-button  cdkFocusInitial (click)='submitPosttForm()' >Ok</button>
+    <button mat-button  cdkFocusInitial (click)='submitPostForm()' >Ok</button>
     </div>
 </div>
