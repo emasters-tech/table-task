@@ -6,76 +6,65 @@
 
 <div
   class="mx-20 p-2 rounded overflow-hidden shadow-lg"
-  *ngIf="users$ | async as users; else loader"
+  *ngIf="postsWithUser$ | async as posts; else loader"
 >
-  <table mat-table [dataSource]="users" class="mat-elevation-z8">
-    <!--- Note that these columns can be defined in any order.
-        The actual rendered columns are set as a property on the row definition" -->
-
-    <!-- Position Column -->
+  <table mat-table [dataSource]="posts" class="mat-elevation-z8">
     <ng-container matColumnDef="img">
       <th
         mat-header-cell
         *matHeaderCellDef
         class="text-lg font-medium text-gray-900"
       >
-        Image
+        <span class="w-full flex justify-start">Image</span>
       </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element" class="w-1/5">
         <img
           class="rounded-full my-2"
-          width="50"
           height="50"
+          width="50"
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqrrxsxZSpsfebkw8VLXe6R5j7mryT6PK7Pg&usqp=CAU"
-          alt=""
+          [alt]="element?.userName"
         />
       </td>
     </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
+    <ng-container matColumnDef="userName">
       <th
         mat-header-cell
         *matHeaderCellDef
-        class="text-lg font-medium text-gray-900"
+        class="w-1/5 text-lg font-medium text-gray-900"
       >
-        Name
+        <span class="w-full flex justify-start"> User Name</span>
       </th>
-      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      <td mat-cell *matCellDef="let element" class="w-1/5">
+        {{ element?.userName }}
+      </td>
     </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="email">
+    <ng-container matColumnDef="title">
       <th
         mat-header-cell
         *matHeaderCellDef
-        class="text-lg font-medium text-gray-900"
+        class="w-1/5 text-lg font-medium text-gray-900"
       >
-        Email
+        <span class="w-full flex justify-start">Title</span>
       </th>
-      <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+      <td mat-cell *matCellDef="let element" class="w-1/5">
+        {{ element?.title }}
+      </td>
     </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="city">
+    <ng-container matColumnDef="body">
       <th
         mat-header-cell
         *matHeaderCellDef
-        class="text-lg font-medium text-gray-900"
+        class="w-2/5 text-lg font-medium text-gray-900"
       >
-        City
+        <span class="w-full flex justify-start">Body</span>
       </th>
-      <td mat-cell *matCellDef="let element">{{ element.address.city }}</td>
-    </ng-container>
-    <ng-container matColumnDef="phone">
-      <th
-        mat-header-cell
-        *matHeaderCellDef
-        class="text-lg font-medium text-gray-900"
-      >
-        Phone
-      </th>
-      <td mat-cell *matCellDef="let element">{{ element.phone }}</td>
+      <td mat-cell *matCellDef="let element" class="w-1/5">
+        {{ element?.body }}
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
