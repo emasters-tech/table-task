@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { Route, RouterModule } from '@angular/router';
+import { MaterialModule } from './shared/material.module';
 
 const routes: Route[] = [
   { path: '', component: UsersTableComponent },
@@ -30,6 +31,7 @@ const routes: Route[] = [
     BrowserAnimationsModule,
     AppMaterialModule,
     HttpClientModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
