@@ -168,8 +168,6 @@ svg#rocket-smoke {
   z-index: -10;
 }
 
-a,
-a:visited,
 a:hover {
   color: #1976d2;
   text-decoration: none;
@@ -311,5 +309,11 @@ table {
   border-spacing: 0 10px !important;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

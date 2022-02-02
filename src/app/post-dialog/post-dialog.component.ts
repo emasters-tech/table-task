@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-post-dialog',
   templateUrl: './post-dialog.component.html',
-  styleUrls: ['./post-dialog.component.scss']
+  styleUrls: ['./post-dialog.component.scss'],
 })
 export class PostDialogComponent implements OnInit {
+  public constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  public ngOnInit(): void {}
 }

@@ -1,15 +1,26 @@
-<div class="h-auto flex flex-row justify-center items-center ms:gap-4 py-5">
-  <!-- logo -->
-  <div>
+<div class="w-full flex justify-center items-center">
+  <div
+    class="lg:w-2/3 h-auto flex flex-row justify-between items-center py-5 mt-5"
+  >
+    <!-- logo -->
     <img src="assets/images/expert-apps-logo-color.png" alt="" />
+    <!-- navigation -->
+    <nav
+      class="flex flex-row justify-center items-center gap-5 text-xl font-medium"
+    >
+      <a class="text-black" routerLink="/" routerLinkActive="activeLink"
+        >Home</a
+      >
+      <a class="text-black" routerLink="/">About Us</a>
+      <a class="text-black" routerLink="/">Solution</a>
+      <a class="text-black" routerLink="/">Our teams</a>
+      <a class="text-black" routerLink="/">Blog</a>
+      <a class="text-black" routerLink="/">Contact</a>
+      <button
+        class="py-1 px-3 rounded-md border-2 hover:text-white hover:bg-blue-700 border-blue-700 text-center text-blue-700"
+      >
+        ع
+      </button>
+    </nav>
   </div>
-  <!-- navigation -->
-  <nav class="flex flex-row justify-center items-center gap-3">
-    <ul class="list-none"></ul>
-  </nav>
-  <button mat-button>Basic</button>
-  <button mat-button color="primary">Primary</button>
-  <button mat-button color="accent">Accent</button>
-  <button mat-button color="warn">Warn</button>
-  <button mat-button disabled>Disabled</button>
 </div>
